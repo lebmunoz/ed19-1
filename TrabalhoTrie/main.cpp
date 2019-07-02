@@ -4,10 +4,10 @@
 #include <iostream>
 #include <fstream>
 #include "Trie.h"
-using  namespace std;
+using namespace std;
 
 // Método para tratar a leitura do arquivo .dic
-DicEntry parseDicEntry(ifstream &fin){
+DicEntry parseDicEntry(ifstream &fin) {
     DicEntry result{};
 
     // cria-se uma variável para armazenar o caracter a ser comparado em busca das tags de abertura da palavra
@@ -17,13 +17,13 @@ DicEntry parseDicEntry(ifstream &fin){
     //armazena o comprimento da palavra, assumindo-se que ja foi lido o '[', que é a tag de abertura
     result.comprimento = 1;
     // laço que avalia caracteres um a um até que a tag seja fechada, identificando a palavra
-    while((newCh = fin.get()) != ']' && !fin.eof()){
+    while ((newCh = fin.get()) != ']' && !fin.eof()) {
         result.key += newCh;
         result.comprimento++;
     }
 
     // laço que avalia o fim da linha, ignorando falsos fechamentos e aberturas de tag, e popula o comprimento.
-    while (!fin.eof() && (newCh = fin.get()) != '\n' || (fin.get() == '\n' && fin.get() != '[')){
+    while (!fin.eof() && (newCh = fin.get()) != '\n' || (fin.get() == '\n' && fin.get() != '[')) {
         result.comprimento++;
     }
     result.comprimento++;
@@ -37,11 +37,9 @@ DicEntry parseDicEntry(ifstream &fin){
     }
 
     return result;
-
 }
 
-int main() 
-{
+int main() {
     ifstream fin;
     // variável para receber o nome do arquivo
     string filename;
@@ -63,7 +61,7 @@ int main()
     while (!fin.eof() ) {
         fin.get(ch);
         // se for uma abertura de palavra, chama o método específico para fazer o parse da palavra
-        if (ch=='['){
+        if (ch=='[') {
             DicEntry dicEntry = parseDicEntry(fin);
 
             /* Após o método "parseDicEntry" verificar a palavra, a posição de início da linha e
