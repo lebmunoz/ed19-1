@@ -3,28 +3,29 @@
 #include <string>
 #include <stack>
 #include "Xml.h"
+#include "Counter.h"
 
 using namespace std;
 
 int main() {
 
     Xml *xml = new Xml();
-    if (xml->parse("/home/luis/CLionProjects/untitled/cmake-build-debug/datasets/dataset01.xml")){
-        auto imgNodes = xml->getNodesByName("img");
-        for (int i = 0; i < imgNodes.size(); i++){
-            auto image = imgNodes.at(i);
-            string name = image->getNodeByName("name")->getValue();
-            string height = image->getNodeByName("dimensions")->getNodeByName("height")->getValue();
-            string width = image->getNodeByName("dimensions")->getNodeByName("width")->getValue();
-            string data = image->getNodeByName("data")->getValue();
-            cout << "name: " << name << endl;
-            cout << "height: " << height << endl;
-            cout << "width: " << width << endl;
-            cout << "data: " << data << endl;
+    for (int j = 1; j <= 5; ++j) {
+        string file = "/home/luis/aulas/ed19-1/TrabalhoXmlImg/dataset0" + std::to_string(j) + ".xml";
+        cout << "Parsing " << file.c_str() << endl;
+        Counter * counter =  new Counter();
+        if (xml->parse(file.c_str())) {
+            auto imgNodes = xml->getNodesByName("img");
+
+            for (int i = 0; i < imgNodes.size(); i++) {
+                auto image = imgNodes.at(i);
+                cout << "Imagem: " << image->getNodeByName("name")->getValue() << " " << "Componentes:" << counter->calculate(image) << endl;
+            }
+        } else {
+            cout << "error" << endl;
         }
+
     }
-
-
 
 
 

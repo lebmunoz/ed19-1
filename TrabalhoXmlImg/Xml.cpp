@@ -22,12 +22,12 @@ bool Xml::parse(const char* path){
                 ch = line[i];
                 if (ch == '<') {
                     tag = "";
-                    while((ch = line[++i])!='>'){
+                    while(i < line.length() && (ch = line[++i])!='>') {
                         tag +=ch;
                     }
 
                     if (tag.find("/") == 0){
-                        if (pilha.top()->getName() == tag.substr(1, tag.length())){
+                        if (pilha.top()->getName() == tag.substr(1, tag.length())) {
                             XmlNode *child =  pilha.top();
                             pilha.pop();
                             if (pilha.empty()){ // entao é o root
@@ -38,10 +38,10 @@ bool Xml::parse(const char* path){
                                 XmlNode * parent = pilha.top();
                                 parent->getNodes().push_back(child);
                             }
-                        }else{
+                        } else {
                             return false; //metodo sai fora errao memo
                         };
-                    }else{
+                    } else {
                         XmlNode *node = new XmlNode();
                         node->setName(tag);
                         node->setValue("");
@@ -57,7 +57,6 @@ bool Xml::parse(const char* path){
         }
         file.close();
     }
-
     return pilha.empty();
 }
 
