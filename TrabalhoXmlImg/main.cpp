@@ -1,3 +1,6 @@
+// Copyright [2019] Luis Enrique Borba Munoz & Ricardo Luiz Camargo Prado
+// Revision by Álvaro Certo
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -10,7 +13,7 @@ using namespace std;
 int main() {
 
     Xml *xml = new Xml();
-    for (int j = 1; j <= 5; ++j) {
+    for (int j = 1; j <= 8; ++j) {
         string file = "/home/luis/aulas/ed19-1/TrabalhoXmlImg/dataset0" + std::to_string(j) + ".xml";
         cout << "Parsing " << file.c_str() << endl;
         Counter * counter =  new Counter();

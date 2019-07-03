@@ -1,0 +1,12 @@
+<dataset>
+
+<img>
+<name>01.png</name>
+<dimensions><height>3</height><width>5</width></dimensions>
+<data>
+01100
+00100
+00001
+</data>
+</img>
+</dataset>

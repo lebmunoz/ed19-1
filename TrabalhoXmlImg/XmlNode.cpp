@@ -1,6 +1,5 @@
-//
-// Created by luis on 20/05/19.
-//
+// Copyright [2019] Luis Enrique Borba Munoz & Ricardo Luiz Camargo Prado
+// Revision by Álvaro Certo
 
 #include "XmlNode.h"
 
@@ -52,4 +51,8 @@ vector<XmlNode*> XmlNode::getNodesByName(const string &name)
     }
 
     return retNodes;
+}
+
+void XmlNode::appendValue(const char &ch) {
+    value.append(1,ch);
 }

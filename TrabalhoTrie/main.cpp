@@ -79,7 +79,7 @@ int main() {
             break;
         }
         /* Instancia um objeto do tipo SearchResult que vai armazenar o resultado da busca pela
-         * palavra da entrada na árvore montada com o dicionário
+         * palavra da entrada, na árvore montada com o dicionário
          */
         SearchResult *result = search(root, word);
         switch (result->resultadoStatus) {

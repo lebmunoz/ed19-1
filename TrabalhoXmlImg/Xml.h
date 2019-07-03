@@ -1,6 +1,5 @@
-//
-// Created by luis on 20/05/19.
-//
+// Copyright [2019] Luis Enrique Borba Munoz & Ricardo Luiz Camargo Prado
+// Revision by Álvaro Certo
 
 #ifndef UNTITLED_XML_H
 #define UNTITLED_XML_H

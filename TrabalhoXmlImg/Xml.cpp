@@ -1,6 +1,5 @@
-//
-// Created by luis on 20/05/19.
-//
+// Copyright [2019] Luis Enrique Borba Munoz & Ricardo Luiz Camargo Prado
+// Revision by Álvaro Certo
 
 #include <fstream>
 #include <iostream>
@@ -50,9 +49,8 @@ bool Xml::parse(const char* path){
 
                 }else{
                     XmlNode *top = pilha.top();
-                    top->setValue(top->getValue()+ch);
+                    top->appendValue(ch);
                 }
-
             }
         }
         file.close();
@@ -60,3 +58,4 @@ bool Xml::parse(const char* path){
     return pilha.empty();
 }
 
+// top->appendValue(ch);

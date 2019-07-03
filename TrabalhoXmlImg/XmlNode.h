@@ -1,6 +1,5 @@
-//
-// Created by luis on 20/05/19.
-//
+// Copyright [2019] Luis Enrique Borba Munoz & Ricardo Luiz Camargo Prado
+// Revision by Álvaro Certo
 
 #ifndef UNTITLED_XMLNODE_H
 #define UNTITLED_XMLNODE_H
@@ -31,6 +30,7 @@ public:
     const string &getValue() const;
 
     void setValue(const string &value);
+    void appendValue(const char &ch);
 
     void setNodes(const vector<XmlNode*> &value);
 
