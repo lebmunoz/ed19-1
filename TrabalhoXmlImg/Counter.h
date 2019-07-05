@@ -1,5 +1,4 @@
 // Copyright [2019] Luis Enrique Borba Munoz & Ricardo Luiz Camargo Prado
-// Revision by Álvaro Certo
 
 #ifndef TRABALHOXMLIMG_COUNTER_H
 #define TRABALHOXMLIMG_COUNTER_H

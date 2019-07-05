@@ -1,5 +1,4 @@
 // Copyright [2019] Luis Enrique Borba Munoz & Ricardo Luiz Camargo Prado
-// Revision by Álvaro Certo
 
 #include <fstream>
 #include <iostream>
@@ -57,5 +56,3 @@ bool Xml::parse(const char* path){
     }
     return pilha.empty();
 }
-
-// top->appendValue(ch);
