@@ -1,13 +1,13 @@
 // Copyright [2019] Luis Enrique Borba Munoz & Ricardo Luiz Camargo Prado
 
-#ifndef TRABALHOXMLIMG_COUNTER_H
-#define TRABALHOXMLIMG_COUNTER_H
+#ifndef TRABALHOXMLIMG_SWEEPER_H
+#define TRABALHOXMLIMG_SWEEPER_H
 struct vec2d {
    int x,y;
 };
 
 class XmlNode;
-class Counter {
+class Sweeper {
     public:
     long calculate(XmlNode* imgNode);
 private:
@@ -17,4 +17,4 @@ private:
 };
 
 
-#endif //TRABALHOXMLIMG_COUNTER_H
+#endif //TRABALHOXMLIMG_SWEEPER_H

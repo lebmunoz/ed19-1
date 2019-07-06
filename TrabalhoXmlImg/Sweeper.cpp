@@ -1,19 +1,19 @@
 // Copyright [2019] Luis Enrique Borba Munoz & Ricardo Luiz Camargo Prado
 
-#include "Counter.h"
+#include "Sweeper.h"
 #include "XmlNode.h"
 #include <sstream>
 #include <iostream>
 #include <queue>
 
-void Counter::deleteMatrix(int **matrix, int height) {
+void Sweeper::deleteMatrix(int **matrix, int height) {
     //deleta matriz
     for(int i = 0; i < height; ++i)
         delete [] matrix[i];
     delete [] matrix;
 }
 
-int **Counter::createMatrix(int width, int height) {
+int **Sweeper::createMatrix(int width, int height) {
     //cria matriz dinamicamente
     int** matrix = new int*[height];
     for(int i = 0; i < height; ++i)
@@ -29,7 +29,7 @@ int **Counter::createMatrix(int width, int height) {
 
 // imgNodeDimension
 
-long Counter::calculate(XmlNode *imgNode) {
+long Sweeper::calculate(XmlNode *imgNode) {
     XmlNode *imgNodeDimension = imgNode->getNodeByName("dimensions");
     stringstream heightStream = stringstream(imgNodeDimension->getNodeByName("height")->getValue());
     stringstream widthStream = stringstream(imgNodeDimension->getNodeByName("width")->getValue());
@@ -104,6 +104,6 @@ long Counter::calculate(XmlNode *imgNode) {
 
 
 
-bool Counter::isValidCoord(int width, int height, vec2d coord) {
+bool Sweeper::isValidCoord(int width, int height, vec2d coord) {
     return !(coord.y < 0 || coord.y >= width || coord.x < 0 || coord.x >= height);
 }
