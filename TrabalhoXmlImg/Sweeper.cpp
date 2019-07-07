@@ -24,7 +24,6 @@ int **Sweeper::createMatrix(int width, int height) {
         for (int j = 0; j < width; ++j)
             matrix[i][j] = 0;
     return matrix;
-
 }
 
 // Este método vai calcular os componentes conexos na imagem binária recebida;
@@ -70,7 +69,7 @@ long Sweeper::calculate(XmlNode *imgNode) {
                 fila.push(xy);
                 matrizR[i][j] = rotulo;
                 // Enquanto a fila de verificação não estiver vazia;
-                while(!fila.empty()){
+                while(!fila.empty()) {
                     // Guarda o primeiro da fila e remove;
                     vec2d removido = fila.front(); fila.pop();
                     // Aplica o rótulo atual na posição que está sendo verificada
@@ -78,13 +77,13 @@ long Sweeper::calculate(XmlNode *imgNode) {
 
                     // Instancia as coordenadas dos vizinhos dentro de um array controle para o laço de alternância;
                     vec2d vizinho[4];
-                    vizinho[1].x = removido.x-1; vizinho[1].y = removido.y;
-                    vizinho[2].x = removido.x+1; vizinho[2].y = removido.y;
-                    vizinho[3].x = removido.x; vizinho[3].y = removido.y-1;
-                    vizinho[4].x = removido.x; vizinho[4].y = removido.y+1;
+                    vizinho[0].x = removido.x-1; vizinho[0].y = removido.y;
+                    vizinho[1].x = removido.x+1; vizinho[1].y = removido.y;
+                    vizinho[2].x = removido.x; vizinho[2].y = removido.y-1;
+                    vizinho[3].x = removido.x; vizinho[3].y = removido.y+1;
 
                     // Este laço alterna a verificação dos vizinhos, do primeiro ao quarto;
-                    for (int numero = 1; numero <= 4; ++numero) {
+                    for (int numero = 0; numero < 4; ++numero) {
                         // Verifica se a coordenada atual não ultrapassa os limites da matriz,
                         // se o pixel atual na matriz de entrada é 1 e se o pixel altual na matriz de rótulo é 0;
                         if (isValidCoord(width,height,vizinho[numero]) &&
@@ -99,7 +98,7 @@ long Sweeper::calculate(XmlNode *imgNode) {
                     }
                 }
                 // Quando termina de percorrer todos os pixels do componente conexo, incrementa o rótulo.
-                rotulo++;
+                ++rotulo;
             }
         }
     }

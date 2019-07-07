@@ -11,5 +11,4 @@ public:
     bool parse(const char* path);
 };
 
-
 #endif //UNTITLED_XML_H

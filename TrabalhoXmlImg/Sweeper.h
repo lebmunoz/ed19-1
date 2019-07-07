@@ -16,5 +16,4 @@ private:
     static bool isValidCoord(int width, int height, vec2d coord);
 };
 
-
 #endif //TRABALHOXMLIMG_SWEEPER_H

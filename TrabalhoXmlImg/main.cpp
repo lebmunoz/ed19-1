@@ -43,7 +43,6 @@ int main() {
             // Mensagem de erro caso o arquivo xml possua erro de formatação;
             cout << "error" << endl;
         }
-
     }
 }
 
