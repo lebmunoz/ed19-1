@@ -18,27 +18,22 @@ void XmlNode::setValue(const string &value) {
     XmlNode::value = value;
 }
 
-void XmlNode::setNodes(const vector<XmlNode *> &value)
-{
+void XmlNode::setNodes(const vector<XmlNode *> &value) {
     nodes = value;
 }
 
-vector<XmlNode *> &XmlNode::getNodes()  {
+vector<XmlNode *> &XmlNode::getNodes() {
     return nodes;
 }
-/*
- * pega o filho que tem o nome  == "name"
- */
 
+// Pega o filho que tem o nome  == "name"
 XmlNode *XmlNode::getNodeByName(const string &name)
 {
     vector<XmlNode*> retNodes = getNodesByName(name);
     return retNodes.size()  == 0 ? nullptr : retNodes.at(0);
 }
 
-/*
- * pega os filhos que tem o nome  == "name"
- */
+// Pega os filhos que têm o nome  == "name"
 vector<XmlNode*> XmlNode::getNodesByName(const string &name)
 {
     vector<XmlNode*> retNodes;
