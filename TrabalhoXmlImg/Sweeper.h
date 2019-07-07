@@ -9,11 +9,11 @@ struct vec2d {
 class XmlNode;
 class Sweeper {
     public:
-    long calculate(XmlNode* imgNode);
+    static long calculate(XmlNode* imgNode);
 private:
-    int** createMatrix(int width, int height);
-    void deleteMatrix(int** matrix, int width);
-    bool isValidCoord(int width, int height, vec2d coord);
+    static int** createMatrix(int width, int height);
+    static void deleteMatrix(int** matrix, int width);
+    static bool isValidCoord(int width, int height, vec2d coord);
 };
 
 
